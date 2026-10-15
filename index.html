@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaOS Workstation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="obsidian" data-bg="nebula">
+    <!-- Boot Loading Animation -->
+    <div id="boot-screen">
+        <div class="boot-logo">🌌</div>
+        <div class="boot-title">NOVA OS</div>
+        <div class="boot-progress-container">
+            <div id="boot-progress-bar"></div>
+        </div>
+        <div id="boot-status-text">Booting Hypervisor...</div>
+    </div>
+
+    <!-- Operating System Master Shell -->
+    <div id="os-root">
+        <!-- Interactive Desktop -->
+        <main id="desktop-area">
+            <div id="desktop-icons"></div>
+        </main>
+
+        <!-- Modern Taskbar Dock -->
+        <footer id="taskbar">
+            <div class="taskbar-left">
+                <button class="start-btn" id="start-button" title="Start Menu">
+                    <span class="start-logo">🌌</span>
+                    <span>Start</span>
+                </button>
+                <nav id="taskbar-apps"></nav>
+            </div>
+
+            <div class="taskbar-right">
+                <button class="tray-btn" id="tray-audio" title="Audio Toggle">🔊</button>
+                <div class="tray-clock">
+                    <div id="tray-time">12:00 PM</div>
+                    <div id="tray-date">10/05/2026</div>
+                </div>
+                <div class="show-desktop-trigger" id="show-desktop-btn" title="Show Desktop"></div>
+            </div>
+        </footer>
+
+        <!-- Start Menu Flyout -->
+        <aside id="start-menu">
+            <div class="start-header">
+                <div class="start-avatar">👤</div>
+                <div>
+                    <div class="start-user-name">User</div>
+                    <div class="start-user-role">Nova Administrator</div>
+                </div>
+            </div>
+            <div class="start-search-box">
+                <input type="text" id="start-search-input" placeholder="Type here to search apps..." autocomplete="off" />
+            </div>
+            <div class="start-apps-container" id="start-apps-grid"></div>
+            <div class="start-footer">
+                <button class="start-pwr-btn" id="start-restart-btn">Restart</button>
+                <button class="start-pwr-btn danger" id="start-shutdown-btn">Shut Down</button>
+            </div>
+        </aside>
+
+        <!-- Right-Click Desktop Context Menu -->
+        <div id="custom-context-menu">
+            <div class="cm-item" id="cm-new-doc">📄 New Text Document</div>
+            <div class="cm-item" id="cm-open-term">💻 Open Terminal</div>
+            <div class="cm-sep"></div>
+            <div class="cm-item" id="cm-wallpaper">🎨 Change Wallpaper</div>
+            <div class="cm-item" id="cm-refresh">🔄 Refresh Desktop</div>
+            <div class="cm-sep"></div>
+            <div class="cm-item" id="cm-about">ℹ️ System Properties</div>
+        </div>
+
+        <!-- Toast Notifications Hub -->
+        <div id="toast-container"></div>
+    </div>
+
+    <!-- OS Core Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/vfs.js"></script>
+    <script src="js/windowManager.js"></script>
+
+    <!-- OS Application Suite -->
+    <script src="js/apps/terminal.js"></script>
+    <script src="js/apps/notepad.js"></script>
+    <script src="js/apps/fileManager.js"></script>
+    <script src="js/apps/calculator.js"></script>
+    <script src="js/apps/taskManager.js"></script>
+    <script src="js/apps/gameSnake.js"></script>
+    <script src="js/apps/settings.js"></script>
+
+    <!-- Master OS Orchestrator -->
+    <script src="js/os.js"></script>
+</body>
+</html>
